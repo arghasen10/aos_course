@@ -18,7 +18,7 @@ sudo update-grub
 ### Download kernel source code from kernel.org
 
 ```bash
-wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.9.325.tar.xz
+wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.6.9.tar.gz
 ```
 
 ### Extract the skernel source code
