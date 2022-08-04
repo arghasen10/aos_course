@@ -53,7 +53,7 @@ make localmodconfig
 We will use the first method for compiling the kernel with the config file that came up with the distribution.
   
 ```bash
-make deb-pkg 
+make deb-pkg -j8
 ```
 If you get any error such as 
 
