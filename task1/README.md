@@ -1,0 +1,69 @@
+# Kernel Compilation
+
+### Installation
+
+```bash  
+sudo apt-get install build-essential rsync gcc bc bison libssl-dev libncurses5-dev libelf-dev
+```
+
+### Increase the bootloader timeout
+
+```bash
+sudo nano /etc/default/grub
+#GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=10
+sudo update-grub	
+```
+
+### Download kernel source code from kernel.org
+
+```bash
+wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.9.325.tar.xz
+```
+
+### Extract the skernel source code
+
+```bash
+mkdir LinuxKernel
+tar xvf linux-* -C LinuxKernel/ --strip-components=1
+```
+
+### Check the extracted source code
+
+```bash
+cd LinuxKernel
+ls
+du -sh
+```
+
+### Configure the kernel compilation
+
+```bash
+cp /boot/config-$(uname -r) ./.config 
+```
+
+The above command will copy the config file that came up with the distribution. Another method is by generating the config file based on the currently connected h/w and for that we can execute the make command.
+
+```bash
+make localmodconfig
+``` 
+
+### Compile the kernel
+
+We will use the first method for compiling the kernel with the config file that came up with the distribution.
+  
+```bash
+make deb-pkg 
+```
+
+Wait for the compilation time as it takes a long time.
+
+### Install the kernel packages
+
+To install the newly compiled kernel package use the following command
+
+```bash
+cd 
+sudo dpkg -i linux-*.deb
+```
+
