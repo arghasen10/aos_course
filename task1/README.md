@@ -3,7 +3,7 @@
 ### Installation
 
 ```bash  
-sudo apt-get install build-essential rsync gcc bc bison libssl-dev libncurses5-dev libelf-dev
+sudo apt-get install build-essential rsync gcc bc bison libssl-dev libncurses5-dev libelf-dev dwarves
 ```
 
 ### Increase the bootloader timeout
@@ -55,7 +55,22 @@ We will use the first method for compiling the kernel with the config file that 
 ```bash
 make deb-pkg 
 ```
+If you get any error such as 
 
+```bash
+make[1]: *** No rule to make target 'debian/canonical-certs.pem', needed by 'certs/x509_certificate_list'.  Stop.
+make: *** [Makefile:1809: certs] Error 2
+```
+
+You need to do the following....<br>
+In your kernel configuration file you will find this line:
+```bash
+CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"
+```
+Change it to this:
+```bash
+CONFIG_SYSTEM_TRUSTED_KEYS=""
+```
 Wait for the compilation time as it takes a long time.
 
 ### Install the kernel packages
