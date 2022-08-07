@@ -82,3 +82,15 @@ cd
 sudo dpkg -i linux-*.deb
 ```
 
+### Configure Kernel 
+
+To configure kernel you can use `menuconfig` tool. 
+
+```bash
+cd ~/LinuxKernel
+make menuconfig
+```
+
+Now you can change the kernel configurations. For example kernel used to have two different multilevel-queue I/O Schedulers. `Kyber I/O Scheduler` and `BFQ I/O Scheduler`. You can select any one scheduler and remove the other.
+
+Once your configurations are all set you need to recompile the kernel. 
