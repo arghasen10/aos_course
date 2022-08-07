@@ -42,7 +42,7 @@ MODULE_PARM_DESC(myintArray, "An array of integers");
 static int __init hello_5_init(void)
 {
 	int i;
-	printk(KERN_INFO "Hello, world 5\n=============\n");
+	printk(KERN_INFO "Hello, world \n=============\n");
 	printk(KERN_INFO "myshort is a short integer: %hd\n", myshort);
 	printk(KERN_INFO "myint is an integer: %d\n", myint);
 	printk(KERN_INFO "mylong is a long integer: %ld\n", mylong);
@@ -57,7 +57,7 @@ static int __init hello_5_init(void)
 
 static void __exit hello_5_exit(void)
 {
-	printk(KERN_INFO "Goodbye, world 5\n");
+	printk(KERN_INFO "Goodbye, world \n");
 }
 
 module_init(hello_5_init);
