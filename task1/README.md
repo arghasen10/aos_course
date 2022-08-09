@@ -3,7 +3,7 @@
 ### Installation
 
 ```bash  
-sudo apt-get install build-essential rsync gcc bc bison libssl-dev libncurses5-dev libelf-dev dwarves
+sudo apt-get install build-essential rsync gcc bc bison libssl-dev libncurses5-dev libelf-dev dwarves flex qt5*
 ```
 
 ### Increase the bootloader timeout
