@@ -42,7 +42,7 @@ du -sh
 cp /boot/config-$(uname -r) ./.config 
 ```
 
-The above command will copy the config file that came up with the distribution. Another method is by generating the config file based on the currently connected h/w and for that we can execute the make command.
+The above command will copy the config file that came up with the distribution. Also generate the config file based on the currently connected h/w and for that we can execute the make command.
 
 ```bash
 make localmodconfig
